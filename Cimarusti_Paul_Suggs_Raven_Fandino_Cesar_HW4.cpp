@@ -11,7 +11,7 @@
 
 int main()
 {
-    LoanData data = new LoanData(100000, , 7);
+    LoanData data(100000, 30, 6);
     std::cout << "Hello, World!" << std::endl;
     return 0;
 }

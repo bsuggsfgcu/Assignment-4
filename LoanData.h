@@ -8,16 +8,20 @@
 class LoanData
 {
 private:
+    //Amount left of loan
     double Bal;
+    //Number of months left to pay
     double n;
+    //Monthly interest rate
     double i;
+    //Monthly payment
     double A;
 
 public:
     LoanData(double p, double years, double inter);
-    void MakePayment(double a);
+    void MakePayment(double pay);
     void PrintAmortizationSchedule();
-    void PrintPayOffTimeReport();
+    void PrintPayOffTimeReport(double p, double i);
 
 };
 
