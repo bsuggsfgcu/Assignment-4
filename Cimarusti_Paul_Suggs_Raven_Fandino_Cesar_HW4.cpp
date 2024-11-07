@@ -3,15 +3,13 @@
 // Date:            November 7, 2024
 // Description:     C++ Program to generate an amortization table based on given parameters
 // Log:             November 7, 2024, Created project file
-#include <iostream>
+//                  November 7, 2024,
+
 #include "LoanData.h"
-
-
-
 
 int main()
 {
-    LoanData data(100000, 30, 6);
-    std::cout << "Hello, World!" << std::endl;
+    LoanData data(100000, 30, 5);
+    data.PrintAmortizationSchedule();
     return 0;
 }
