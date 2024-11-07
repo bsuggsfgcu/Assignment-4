@@ -9,7 +9,7 @@
 LoanData::LoanData(double p, double years, double inter)
 {
     //Number of months (years / 12)
-    LoanData::n = years / 12;
+    LoanData::n = years * 12;
     //Interest rate (made into decimal and monthly)
     LoanData::i = inter / 100 / 12;
     //Compute monthly payment using formula
@@ -27,19 +27,21 @@ void LoanData::PrintAmortizationSchedule()
 {
     double balance = Bal;
     double payment;
-    double interestPaid;
-    double principlePaid;
-    double endingBalance;
     while(balance > 0)
     {
         if((i+1) * balance > A)
         {
-            payment = balance;
+            payment = A;
         }
         else
         {
             payment = (i + 1) * balance;
         }
+        const double iP = i * balance;
+        double principlePaid = payment - iP;
+        const double endingBalance = (i + 1) * balance - payment;
+        std::cout << balance << " " << iP << " " << principlePaid << " " << endingBalance << " " << A << std::endl;
+        balance = endingBalance;
     }
 }
 
@@ -51,3 +53,12 @@ void LoanData::PrintPayOffTimeReport(double p, double i)
         std::cout << month << " " << A << std::endl;
     }
 }
+
+void LoanData::SpitOutData()
+{
+    std::cout << "i: " << LoanData::i << std::endl;
+    std::cout << "n: " << LoanData::n << std::endl;
+    std::cout << "A: " << LoanData::A << std::endl;
+    std::cout << "Bal: " << LoanData::Bal << std::endl;
+}
+

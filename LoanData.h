@@ -22,6 +22,7 @@ public:
     void MakePayment(double pay);
     void PrintAmortizationSchedule();
     void PrintPayOffTimeReport(double p, double i);
+    void SpitOutData();
 
 };
 
