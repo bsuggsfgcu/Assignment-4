@@ -12,7 +12,7 @@
 int main()
 {
     LoanData data(98500, 30, 6);
-    data.PrintAmortizationSchedule();
+    data.PrintPayOffTimeReport(98500, 0.005);
     //std::cout << "Hello, World!" << std::endl;
     return 0;
 }
