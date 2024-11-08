@@ -29,7 +29,7 @@ void LoanData::PrintAmortizationSchedule()
     double balance = Bal;
     double payment;
     int tableSpacing = 20;
-    std::cout << std::left << std::fixed << std::setprecision(2) << std::setw(tableSpacing) << "Beginning Bal." << std::setw(tableSpacing) << "Interest paid" << std::setw(tableSpacing) << "Principle paid" << std::setw(tableSpacing) << "Ending Bal." << std::endl;
+    std::cout << std::left << std::fixed << std::setprecision(2) << std::setw(tableSpacing+1) << "Beginning Bal." << std::setw(tableSpacing + 1) << "Interest paid" << std::setw(tableSpacing + 1) << "Principle paid" << std::setw(tableSpacing + 1) << "Ending Bal." << std::endl;
     while(balance > 0)
     {
         if((i+1) * balance > A)
