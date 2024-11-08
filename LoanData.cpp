@@ -3,6 +3,7 @@
 //
 #include "LoanData.h"
 
+#include <iomanip>
 #include <iostream>
 #include <valarray>
 
@@ -27,6 +28,8 @@ void LoanData::PrintAmortizationSchedule()
 {
     double balance = Bal;
     double payment;
+    int tableSpacing = 20;
+    std::cout << std::left << std::fixed << std::setprecision(2) << std::setw(tableSpacing) << "Beginning Bal." << std::setw(tableSpacing) << "Interest paid" << std::setw(tableSpacing) << "Principle paid" << std::setw(tableSpacing) << "Ending Bal." << std::endl;
     while(balance > 0)
     {
         if((i+1) * balance > A)
@@ -40,7 +43,8 @@ void LoanData::PrintAmortizationSchedule()
         const double iP = i * balance;
         double principlePaid = payment - iP;
         const double endingBalance = (i + 1) * balance - payment;
-        std::cout << balance << " " << iP << " " << principlePaid << " " << endingBalance << " " << A << std::endl;
+        //std::cout << balance << " " << iP << " " << principlePaid << " " << endingBalance << " " << std::endl;
+        std::cout << "$" << std::setw(tableSpacing) << balance << "$" << std::setw(tableSpacing) << iP << "$" << std::setw(tableSpacing) << principlePaid << "$" << std::setw(tableSpacing) << endingBalance << std::endl;
         balance = endingBalance;
     }
 }
@@ -49,16 +53,8 @@ void LoanData::PrintPayOffTimeReport(double p, double i)
 {
     for(int month = 6; month < 360; month++)
     {
-        A = p*((i*std::pow(i+1, n))/(std::pow(i+1, n) - 1));
-        std::cout << month << " " << A << std::endl;
+        double payment = p*((i*std::pow(i+1, n))/(std::pow(i+1, n) - 1));
+        std::cout << month << " " << payment << std::endl;
     }
-}
-
-void LoanData::SpitOutData()
-{
-    std::cout << "i: " << LoanData::i << std::endl;
-    std::cout << "n: " << LoanData::n << std::endl;
-    std::cout << "A: " << LoanData::A << std::endl;
-    std::cout << "Bal: " << LoanData::Bal << std::endl;
 }
 

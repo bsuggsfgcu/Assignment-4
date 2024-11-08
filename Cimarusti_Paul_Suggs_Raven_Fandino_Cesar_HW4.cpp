@@ -11,11 +11,8 @@
 
 int main()
 {
-    LoanData data(100000, 30, 6);
-    data.SpitOutData();
+    LoanData data(98500, 30, 6);
     data.PrintAmortizationSchedule();
-    data.MakePayment(5000);
-    data.PrintAmortizationSchedule();
-    std::cout << "Hello, World!" << std::endl;
+    //std::cout << "Hello, World!" << std::endl;
     return 0;
 }
