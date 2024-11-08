@@ -1,6 +1,3 @@
-//
-// Created by datav on 11/7/2024.
-//
 
 #ifndef LOANDATA_H
 #define LOANDATA_H
@@ -22,7 +19,6 @@ public:
     void MakePayment(double pay);
     void PrintAmortizationSchedule();
     void PrintPayOffTimeReport(double p, double i);
-    void SpitOutData();
 
 };
 

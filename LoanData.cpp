@@ -1,6 +1,3 @@
-//
-// Created by datav on 11/7/2024.
-//
 #include "LoanData.h"
 
 #include <iomanip>
